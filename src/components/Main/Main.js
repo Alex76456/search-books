@@ -92,7 +92,7 @@ function Main({ onSnippetClick, snippets, onSearch, isRender, isSuccessImage }) 
 						type="button"
 						onClick={showMoreSnippets}
 					>
-						показать еще...
+						Показать еще...
 					</button>
 				)}
 				{window.pageYOffset > 600 && (

@@ -12,7 +12,7 @@ function Snippet({ snippet, onBookClick }) {
 				className="snippets__image"
 				src={
 					snippet.cover_i ? (
-						`http://covers.openlibrary.org/b/id/${snippet.cover_i}-M.jpg`
+						`https://covers.openlibrary.org/b/id/${snippet.cover_i}-M.jpg`
 					) : (
 						`https://missefficiency.nl/contents/media/l_naslagwerk_20171107144603.jpg`
 					)

@@ -1,6 +1,7 @@
 class Api {
 	constructor(config) {
 		this._url = config.baseUrl;
+		this._headers = config.headers;
 	}
 
 	_getResponse(res) {
@@ -11,7 +12,9 @@ class Api {
 	}
 
 	getSnippets(request) {
-		return fetch(`http://${this._url}/search.json?q=${request}`)
+		return fetch(`https://${this._url}/search.json?q=${request}`, {
+			headers: this._headers
+		})
 			.then(this._getResponse)
 			.catch((err) => {
 				console.error(err);
@@ -19,7 +22,9 @@ class Api {
 	}
 
 	getSnippetImage(id, size = 'L') {
-		return fetch(`http://covers.${this._url}/b/id/${id}-${size}.jpg`)
+		return fetch(`https://covers.${this._url}/b/id/${id}-${size}.jpg`, {
+			headers: this._headers
+		})
 			.then(this._getResponse)
 			.catch((err) => {
 				console.error(err);
@@ -27,6 +32,11 @@ class Api {
 	}
 }
 
-const api = new Api({ baseUrl: 'openlibrary.org' });
+const api = new Api({
+	baseUrl: 'openlibrary.org',
+	headers: {
+		Accept: 'application/json'
+	}
+});
 
 export default api;

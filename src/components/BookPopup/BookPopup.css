@@ -48,6 +48,7 @@
 
 .popup__content {
 	max-width: 75vw;
+	/*max-height: 75vw;*/
 	/*max-width: 430px;
 	width: 100%;*/
 	background-color: #fff;

@@ -27,7 +27,7 @@ function BookPopup({ book, isOpen, onClose, onEscClose }) {
 					className="popup__image"
 					src={
 						book.cover_i ? (
-							`http://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+							`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
 						) : (
 							`https://missefficiency.nl/contents/media/l_naslagwerk_20171107144603.jpg`
 						)
