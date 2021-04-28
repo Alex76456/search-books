@@ -1,7 +1,6 @@
 import React from 'react';
 import './Main.css';
 import { useState, useEffect } from 'react';
-//import { snippets } from '../../data/data';
 import Snippet from '../Snippet/Snippet';
 
 function Main({ onSnippetClick, snippets, onSearch, isRender, isSuccessImage }) {
@@ -47,7 +46,7 @@ function Main({ onSnippetClick, snippets, onSearch, isRender, isSuccessImage }) 
 					<label className="search__form-field">
 						<input
 							className="search__input"
-							type="url"
+							type="text"
 							name="search-input"
 							placeholder="Начните вводить название книги"
 							required
@@ -81,7 +80,11 @@ function Main({ onSnippetClick, snippets, onSearch, isRender, isSuccessImage }) 
 					{snippets.map((item, i) => {
 						return (
 							i <= visibleSnippets && (
-								<Snippet snippet={item} key={i} onBookClick={onSnippetClick} />
+								<Snippet
+									snippet={item}
+									key={item.key}
+									onBookClick={onSnippetClick}
+								/>
 							)
 						);
 					})}
