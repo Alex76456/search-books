@@ -32,14 +32,16 @@ function App() {
 	}
 
 	async function handleSearchSubmit(request) {
-		setIsRender(true);
-		let res = await api.getSnippets(request);
+		if (request !== '') {
+			setIsRender(true);
+			let res = await api.getSnippets(request);
 
-		console.log(res.numFound);
-		setIsSuccessImage(res.numFound > 0 ? true : false);
+			console.log(res.numFound);
+			setIsSuccessImage(res.numFound > 0 ? true : false);
 
-		setSnippets(res.docs);
-		setIsRender(false);
+			setSnippets(res.docs);
+			setIsRender(false);
+		}
 	}
 	return (
 		<div className="root">
